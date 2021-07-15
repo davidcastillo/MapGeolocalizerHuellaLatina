@@ -7,7 +7,7 @@ const CoordinatesGenerator = ({data}) => {
 
   
  /*
-  const API_KEY = 'AIzaSyCs2yRPIrkwSV57SsofAlZYXQEDirlkr5I';
+  const API_KEY = '';
   const [eventData, setEventData] = useState([]);
     
   useEffect(()=>{
