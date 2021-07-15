@@ -1,25 +1,29 @@
-import logo from './logo.svg';
-import './App.css';
+import { useEffect, useState } from "react";
+import Tabletop from "tabletop";
+import Map from "./components/Map"
+import CoordinatesGenerator from "./components/Coordinatesgenerator"
 
-function App() {
+
+export default function App() {
+  const [dataGS, setData] = useState([]);
+    
+  useEffect(() => {
+    const fetchLocations = async () => {
+      await Tabletop.init({
+        key: "1KYM6IIoPRCnOkZKDjlsMr8Vz_AXn9tmImxSKYygvrSg",
+        simpleSheet: true
+      })
+        .then((data) => {setData(data)})
+        .catch((err) => console.warn(err));
+    }
+    
+    fetchLocations()
+  }, []);
+  
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <Map data={dataGS} />
+      <CoordinatesGenerator  data={dataGS} />
     </div>
   );
 }
-
-export default App;
