@@ -10,7 +10,7 @@ export default function App() {
   useEffect(() => {
     const fetchLocations = async () => {
       await Tabletop.init({
-        key: "KYM6IIoPRCnOkZKDjlsMr8Vz_AXn9tmImxSKYygvrSg",
+        key: process.env.REACT_APP_SPREADSHEET_KEY,
         simpleSheet: true
       })
         .then((data) => {setData(data)})
