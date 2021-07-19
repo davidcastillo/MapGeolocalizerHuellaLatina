@@ -31,7 +31,7 @@ const CoordinatesGenerator = ({data}) => {
 
   return (
     <div >
-        Hello
+        Coordindates generator
     </div>
   )
 }
