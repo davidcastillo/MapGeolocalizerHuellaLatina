@@ -1,37 +1,40 @@
 import {useState,useEffect} from 'react'
-import Locationmarker from './Locationmarker'
+//import Map from "./Map"
 
 
 const CoordinatesGenerator = ({data}) => {
+  // const [coordinates, setCoordinates] = useState([]);
+  // const API_KEY = process.env.REACT_APP_GOOGLEMAPS_API_KEY;
+  //var newCoordinates = [];
+
+  useEffect(() => {
 
 
-  
- /*
-  const API_KEY = '';
-  const [eventData, setEventData] = useState([]);
-    
-  useEffect(()=>{
-    //console.log(data)
-    data.map(item => {
-      const place = item.location
-      const fetchCoordinates = async () => {
-        const response = await fetch("https://maps.googleapis.com/maps/api/geocode/json?address="+place+"&key="+API_KEY);
-        const datos = await response.json();
-        setEventData(datos);
-        //console.log(eventData.results[0].geometry.location.lat);
-      }
-    
-      fetchCoordinates()
-      
-    })
+    // const fetchCoordinates = async (place) => {
+    //   //setCoordinates(coordenada);
+    //   const response = await fetch("https://maps.googleapis.com/maps/api/geocode/json?address="+place+"&key="+API_KEY)
+    //   // .then((datos) => datos.json())
+    //   // .then((datos) => { setCoordinates(newCoordinates => [...newCoordinates, datos])})
+    //   // .catch((err) => console.warn(err));
+    //   const coordenada = await response.json();
+    //   setCoordinates(newCoordinates => [...newCoordinates, coordenada]);
+    // }
 
-  }, [])
-*/
+    // data.map(item => {
+    //   console.log(item.location);
+    //   fetchCoordinates(item.location);
+    //   return "";
+    // })
+
+    // console.log(coordinates);
+
+  }, []);
   
 
   return (
     <div >
         Hello
+        
     </div>
   )
 }

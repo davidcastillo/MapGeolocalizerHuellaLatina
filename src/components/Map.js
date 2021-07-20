@@ -2,47 +2,17 @@ import {useState} from 'react'
 import GoogleMapReact from 'google-map-react'
 import Locationmarker from './Locationmarker'
 import LocationInfoBox from './LocationInfoBox'
-import Markers from "./Coordinatesgenerator"
+//import CoordinatesGenerator from "./Coordinatesgenerator"
 
-const Map = ({data,center,zoom}) => {
+const Map = ({coordinates,data,center,zoom}) => {
     const [locationInfo, setLocationInfo] = useState(null)
     
-/*
-    useEffect( ()=>{
-        console.log(data);
-        data.map(item => {
-            const fetchCoordinates = async () => {
-                await fetch("https://maps.googleapis.com/maps/api/geocode/json?address="+item.location+"&key="+API_KEY)
-                .then((datos) => {setEventData(datos)})
-                .catch((err) => console.log.warn(err))l     
-            }
-            fetchCoordinates();
-            console.log(eventData);
-            
-        })},[]);
-              */
- 
-        //   const fetchCoordinates = async () => {
-        //     const response = await fetch("https://maps.googleapis.com/maps/api/geocode/json?address="+item.location+"&key="+API_KEY);
-        //     const datos = await response.json();     
-        //     setEventData(datos);
-        //     }
-        //   fetchCoordinates()
-        //   console.log(eventData);
-        //   return "";
-
-
+    coordinates.map(coordinate =>
+        console.log(coordinate.results[0].formatted_address)
+        )
 
     const markers = data.map(item => {
-        /*
-        const fetchCoordinates = async () => {
-            await fetch("https://maps.googleapis.com/maps/api/geocode/json?address="+item.location+"&key="+API_KEY)
-            .then((datos) => {setEventData(datos)})
-            .catch((err) => console.log.warn(err))   
-        }
-        fetchCoordinates();
-        console.log("hello");
-*/
+
         return <Locationmarker 
                     lat ={item.lat}
                     lng={item.lng} 
