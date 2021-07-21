@@ -3,14 +3,14 @@ import TopSection from './TopSection'
 import BottonSection  from './BottonSection'
 
 
-const LeftBar = ({data}) => {
+const LeftBar = () => {
 
 
   
 
   return (
     <div >
-        <TopSection data={data}/>
+        <TopSection/>
         <BottonSection />
     </div>
   )
