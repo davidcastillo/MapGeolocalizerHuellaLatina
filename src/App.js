@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import Tabletop from "tabletop";
 import Map from "./components/Map"
-import CoordinatesGenerator from "./components/Coordinatesgenerator"
+import LeftBar from "./components/LeftBar"
 
 
 export default function App() {
@@ -22,8 +22,8 @@ export default function App() {
   
   return (
     <div>
-      <Map data={dataGS} />
-      <CoordinatesGenerator  data={dataGS} />
+      <Map  data={dataGS} />
+      <LeftBar  data={dataGS} />
     </div>
   );
 }
