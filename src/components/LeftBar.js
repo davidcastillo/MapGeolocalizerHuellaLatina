@@ -3,15 +3,15 @@ import TopSection from './TopSection'
 import BottonSection  from './BottonSection'
 
 
-const LeftBar = ({data}) => {
+const LeftBar = ({associateData}) => {
 
-
+  //console.log(associateData.location);
   
 
   return (
-    <div >
-        <TopSection data={data}/>
-        <BottonSection />
+    <div  className='sidebar'>
+        <TopSection associateData={associateData} />
+        <BottonSection/>
     </div>
   )
 }

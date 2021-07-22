@@ -22,8 +22,10 @@ export default function App() {
   
   return (
     <div>
-      <Map  data={dataGS} />
-      <LeftBar  data={dataGS} />
+      
+      <Map data={dataGS} />
+      <LeftBar />
+      
     </div>
   );
 }

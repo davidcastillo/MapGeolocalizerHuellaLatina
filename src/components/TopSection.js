@@ -1,27 +1,14 @@
-import {useState} from 'react'
-import LocationInfoBox from './LocationInfoBox'
-
+import logoHuellaLatina from '../assets/logoHuellaLatina.png'
 
 const TopSection = () => {
-    const [locationInfo, setLocationInfo] = useState(null)
-
-    const markers = data.map(item => {
-        return <Locationmarker 
-                    onClick={
-                        ()=> setLocationInfo({
-                        id: item.id, location: item.location, user: item.user          
-                        })
-                    } 
-                />
-    })
-
-
 
     return (
-        <div>
-            I am the top section
-            {markers}
-            {locationInfo && <LocationInfoBox info={locationInfo} />}
+                    
+        <div className="top-section" >
+            <img className="logo" src={logoHuellaLatina} alt="logoHuellaLatina" />
+            <br></br>
+            <br></br>
+            <h3>Haz click en cualquier icono del mapa</h3>
         </div>
     )
 }
