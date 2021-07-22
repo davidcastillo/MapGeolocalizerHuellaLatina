@@ -2,10 +2,12 @@ import {useState} from 'react'
 import GoogleMapReact from 'google-map-react'
 import Locationmarker from './Locationmarker'
 import LocationInfoBox from './LocationInfoBox'
-import Markers from "./Coordinatesgenerator"
+
+
 
 const Map = ({data,center,zoom}) => {
-    const [locationInfo, setLocationInfo] = useState(null)
+    const [locationInfo, setLocationInfo] = useState(null);
+    
     
 
     const markers = data.map(item => {
@@ -14,7 +16,7 @@ const Map = ({data,center,zoom}) => {
                     lng={item.lng} 
                     onClick={
                         ()=> setLocationInfo({
-                        id: item.id, location: item.location, user: item.user          
+                        status: item.status, location: item.location, user: item.user          
                         })
                     } 
                 />
@@ -36,6 +38,7 @@ const Map = ({data,center,zoom}) => {
                 
             </GoogleMapReact>
             {locationInfo && <LocationInfoBox info={locationInfo} />}
+            
         </div>
     )
 }
@@ -49,4 +52,4 @@ Map.defaultProps = {
     
 }
 
-export default Map
+export default Map;

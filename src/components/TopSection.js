@@ -1,16 +1,15 @@
-import {useState} from 'react'
-import LocationInfoBox from './LocationInfoBox'
-
+import logoHuellaLatina from '../assets/logoHuellaLatina.png'
 
 const TopSection = () => {
 
-
-
     return (
-        <div>
-            I am the top section
-
-       </div>
+                    
+        <div className="top-section" >
+            <img className="logo" src={logoHuellaLatina} alt="logoHuellaLatina" />
+            <br></br>
+            <br></br>
+            <h3>Haz click en cualquier icono del mapa</h3>
+        </div>
     )
 }
 
