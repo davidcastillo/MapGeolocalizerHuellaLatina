@@ -1,9 +1,10 @@
-import React from 'react'
+import addSample from '../assets/300x250-example-banner-300x250.jpg'
+
 
 const BottonSection = () => {
     return (
         <div className="botton-section">
-            Ads here
+            {/* <img className="adImage" src={addSample} alt="logoHuellaLatina" /> */}
         </div>
     )
 }

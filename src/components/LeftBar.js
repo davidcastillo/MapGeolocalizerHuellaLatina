@@ -1,6 +1,8 @@
 import {useState,useEffect} from 'react'
 import TopSection from './TopSection'
 import BottonSection  from './BottonSection'
+import Logo from "./Logo";
+
 
 
 const LeftBar = ({associateData}) => {
@@ -10,6 +12,7 @@ const LeftBar = ({associateData}) => {
 
   return (
     <div  className='sidebar'>
+     
         <TopSection associateData={associateData} />
         <BottonSection/>
     </div>

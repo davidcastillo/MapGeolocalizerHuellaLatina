@@ -16,7 +16,10 @@ const Map = ({data,center,zoom}) => {
                     lng={item.lng} 
                     onClick={
                         ()=> setLocationInfo({
-                        status: item.status, location: item.location, user: item.user          
+                        status: item.status, 
+                        location: item.location, 
+                        user: item.user,
+                        nationality: item.nationality          
                         })
                     } 
                 />

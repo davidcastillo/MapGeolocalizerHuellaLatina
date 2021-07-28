@@ -2,6 +2,8 @@ import { useEffect, useState } from "react";
 import Tabletop from "tabletop";
 import Map from "./components/Map"
 import LeftBar from "./components/LeftBar"
+import Logo from "./components/Logo";
+
 
 
 export default function App() {
@@ -22,9 +24,13 @@ export default function App() {
   
   return (
     <div>
-      
+      <meta content="width=device-width, initial-scale=1" name="viewport" />
+
+     
       <Map data={dataGS} />
-      <LeftBar />
+      
+      {/* <LeftBar /> */}
+      
       
     </div>
   );
