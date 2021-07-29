@@ -108,6 +108,7 @@ box-shadow: 0px 6px 10px 6px rgba(0,0,0,0.42);
 
 .closeInfoBox{
   float: right;
+
 }
 
 
@@ -118,6 +119,11 @@ box-shadow: 0px 6px 10px 6px rgba(0,0,0,0.42);
     height: 100vh;
     float: right;
   }
+
+  .location-info{
+    width: 275px;
+  }
+
   .logo{
     margin-top: 5px;
     margin-bottom: 10px;
