@@ -7,6 +7,7 @@ import LocationInfoBox from './LocationInfoBox'
 
 const Map = ({data,center,zoom}) => {
     const [locationInfo, setLocationInfo] = useState(null);
+    const [infoBoxPopup, setinfoBoxPopup] = useState(false);
     
     
 
@@ -15,12 +16,15 @@ const Map = ({data,center,zoom}) => {
                     lat ={item.lat}
                     lng={item.lng} 
                     onClick={
-                        ()=> setLocationInfo({
-                        status: item.status, 
-                        location: item.location, 
-                        user: item.user,
-                        nationality: item.nationality          
-                        })
+                        ()=> {
+                            setLocationInfo({
+                                status: item.status, 
+                                location: item.location, 
+                                user: item.user,
+                                nationality: item.nationality,     
+                                })
+                            setinfoBoxPopup(true)
+                        }
                     } 
                 />
     })
@@ -40,7 +44,7 @@ const Map = ({data,center,zoom}) => {
                 {markers}
                 
             </GoogleMapReact>
-            {locationInfo && <LocationInfoBox info={locationInfo} />}
+            {infoBoxPopup && <LocationInfoBox trigger={infoBoxPopup} info={locationInfo} setTrigger={setinfoBoxPopup} />}
             
         </div>
     )

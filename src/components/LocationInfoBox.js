@@ -1,17 +1,11 @@
 import Logo from "./Logo";
 import BottonSection from "./BottonSection";
 
-const LocationInfoBox = ({info}) => {
-    function hideInfoBox(e){
-        e.preventDefault();
-        console.log("Hello David");
-    }
+const LocationInfoBox = ({info,trigger,setTrigger}) => {
 
-
-    return (
-        
-        <div className="location-info">
-            <span className="closeInfoBox" onClick={hideInfoBox} >X</span>
+    return (trigger) ? (<div className="location-info" >
+            <span className="closeInfoBox" onClick={()=> setTrigger(false)} >X</span>
+            {/* {props.children} */}
             <Logo />
             <h2>{info.user}</h2> 
             <div className="asociate-info">
@@ -25,7 +19,7 @@ const LocationInfoBox = ({info}) => {
             </div>
             <BottonSection />
         </div>
-    )
+    ) : "";
 }
 
 export default LocationInfoBox
