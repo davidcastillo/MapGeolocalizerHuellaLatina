@@ -1,5 +1,7 @@
 import { useEffect, useState } from "react";
 import Tabletop from "tabletop";
+import { readRemoteFile } from 'react-papaparse'
+
 import Map from "./components/Map"
 import LeftBar from "./components/LeftBar"
 import Logo from "./components/Logo";
@@ -11,12 +13,15 @@ export default function App() {
     
   useEffect(() => {
     const fetchLocations = async () => {
-      await Tabletop.init({
-        key: process.env.REACT_APP_SPREADSHEET_KEY,
-        simpleSheet: true
-      })
-        .then((data) => {setData(data)})
-        .catch((err) => console.warn(err));
+     await readRemoteFile(
+      "https://docs.google.com/spreadsheets/d/1KYM6IIoPRCnOkZKDjlsMr8Vz_AXn9tmImxSKYygvrSg/pub?output=csv",
+        {
+          header: true,
+          complete: (data) => {
+            setData(data.data)
+          }
+        }
+      )   
     }
     
     fetchLocations()
@@ -29,7 +34,6 @@ export default function App() {
      
       <Map data={dataGS} />
       
-      {/* <LeftBar /> */}
       
       
     </div>
