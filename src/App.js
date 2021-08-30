@@ -14,12 +14,14 @@ export default function App() {
   useEffect(() => {
     const fetchLocations = async () => {
      await readRemoteFile(
-      "https://docs.google.com/spreadsheets/d/1KYM6IIoPRCnOkZKDjlsMr8Vz_AXn9tmImxSKYygvrSg/pub?output=csv",
+      "https://docs.google.com/spreadsheets/d/e/2PACX-1vQlaUgZk0F6TFtCL4EtQsqQM5gUmF_b471AaitF5lhOZHdHI-5jVIep3Q4sCjjUYWykP1kIlF0ZgTGi/pub?gid=0&single=true&output=csv",
         {
           header: true,
           complete: (data) => {
             setData(data.data)
+            console.log(data.data);
           }
+          
         }
       )   
     }
